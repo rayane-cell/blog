@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>article - flux//lab</title>
+  <meta name="description" content="Article long flux//lab avec sources et lecture complète.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;750;800;900&family=Roboto+Mono:wght@500;700&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="signal-style.css">
+</head>
+<body data-page="articles" data-article="gaming-indes">
+  <div class="reading-progress" data-reading-progress></div>
+  <a class="skip-link" href="#contenu">aller au contenu</a>
+  <header class="site-header"><div class="container nav-shell"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>flux//lab<small>veille vivante</small></span></a><nav class="nav-links" data-nav-links aria-label="navigation principale"><a data-nav="home" href="index.html">accueil</a><a data-nav="articles" href="signal-articles.html">articles</a><a data-nav="videos" href="signal-videos.html">vidéos</a><a data-nav="tutos" href="signal-tutos.html">tutos</a><a data-nav="jeux" href="signal-jeux.html">jeux</a><a data-nav="tendances" href="signal-tendances.html">tendances</a><a data-nav="sources" href="signal-sources.html">sources</a></nav><button class="nav-toggle" type="button" data-nav-toggle aria-label="ouvrir le menu"><span></span></button></div></header>
+  <main id="contenu">
+    <section class="article-hero" data-article-hero><div class="container"><span class="eyebrow" data-article-category></span><h1 data-article-title></h1><p data-article-deck></p><div class="article-meta" data-article-meta></div></div></section>
+    <section class="section white"><div class="container article-wrap"><article class="article-content" data-article-page></article><aside class="article-sidebar"><div class="side-box"><p class="side-title">sources</p><div class="article-source-list" data-article-sources></div></div><div class="side-box"><p class="side-title">tags</p><div class="tag-list" data-article-tags></div></div><button class="btn secondary" type="button" data-bookmark>ajouter aux favoris</button><div class="side-box"><p class="side-title">à lire ensuite</p><div class="stack-list" data-related-articles></div></div></aside></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>flux//lab<small>veille vivante</small></span></a><p>Dernière mise à jour : <span data-updated></span>.</p></div><div><strong>lire</strong><a href="signal-articles.html">articles</a><a href="signal-tendances.html">tendances</a></div><div><strong>apprendre</strong><a href="signal-videos.html">vidéos</a><a href="signal-tutos.html">tutos</a><a href="signal-jeux.html">jeux</a></div><div><strong>vérifier</strong><a href="signal-sources.html">sources</a><small>© <span data-year></span> flux//lab</small></div></div></footer>
+  <script>
+/* JavaScript intégré : données du blog */
+window.SignalData = {
+  site: {
+    name: "flux//lab",
+    tagline: "veille tech, cyber, ia, gaming",
+    updated: "11 juin 2026"
+  },
+  articles: [
+    {
+      slug: "cyber-zero-trust",
+      href: "signal-article-cyber-zero-trust.html",
+      category: "cybersécurité",
+      title: "Zero trust : arrêter de croire que le réseau est gentil",
+      deck: "Le zero trust n'est pas un produit magique. C'est une façon de concevoir l'identité, les accès, les journaux et les privilèges pour limiter les dégâts quand une machine, un compte ou une application déraille.",
+      date: "11 juin 2026",
+      read: "8 min",
+      author: "rédaction flux//lab",
+      trendScore: 96,
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1400&q=80",
+      tags: ["iam", "cloud", "réseau", "défense"],
+      sources: [
+        { name: "nist", url: "https://www.nist.gov/cyberframework" },
+        { name: "cisa", url: "https://www.cisa.gov/zero-trust-maturity-model" },
+        { name: "anssi", url: "https://cyber.gouv.fr/" }
+      ],
+      content: [
+        { type: "p", text: "Pendant longtemps, beaucoup d'équipes ont protégé le périmètre comme si le réseau interne était une zone naturellement sûre. Dans une entreprise moderne, cette idée casse vite : télétravail, SaaS, appareils personnels, cloud, prestataires, comptes partagés, tokens d'API. Le zero trust part d'un principe plus sain : chaque demande doit prouver qu'elle mérite l'accès demandé." },
+        { type: "p", text: "La première brique n'est pas un firewall plus cher. C'est l'inventaire. Qui accède à quoi, depuis quel appareil, avec quel niveau de risque, et pour quelle durée ? Sans cette cartographie, on empile des outils, mais personne ne voit vraiment les chemins que peut prendre un attaquant." },
+        { type: "h2", text: "Ce qui change concrètement" },
+        { type: "p", text: "Un bon modèle zero trust combine identité forte, segmentation, moindre privilège et observation continue. L'utilisateur ne reçoit pas un passeport permanent parce qu'il s'est connecté le matin. Il reçoit un accès contextualisé, réévalué quand le contexte change : nouvel appareil, pays inhabituel, action sensible, application critique." },
+        { type: "list", items: ["Activer l'authentification multifacteur sur les comptes critiques.", "Réduire les droits administrateur permanents.", "Découper les applications et environnements au lieu de laisser un réseau plat.", "Journaliser les accès et créer des alertes compréhensibles.", "Prévoir une révocation rapide des sessions et tokens."] },
+        { type: "h2", text: "La bonne question à poser" },
+        { type: "p", text: "Au lieu de demander seulement \"qui est connecté ?\", demande aussi \"quel est le risque de cette action maintenant ?\". Un développeur peut avoir besoin de lire les logs de production, mais pas forcément de déployer un correctif depuis un ordinateur non géré à 3 heures du matin." },
+        { type: "p", text: "Le zero trust devient intéressant quand il rend les incidents moins dramatiques. Si un mot de passe fuit, l'attaquant ne doit pas obtenir tout le château. Si une machine tombe, elle ne doit pas devenir un pont automatique vers le reste du système." }
+      ]
+    },
+    {
+      slug: "ia-agents",
+      href: "signal-article-ia-agents.html",
+      category: "ia",
+      title: "Agents IA : utiles quand ils ont une mission courte",
+      deck: "Les agents deviennent vraiment pratiques quand on leur donne une tâche limitée, des outils bien choisis, des garde-fous et une manière claire de vérifier leur travail.",
+      date: "10 juin 2026",
+      read: "7 min",
+      author: "rédaction flux//lab",
+      trendScore: 92,
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
+      tags: ["automatisation", "llm", "workflow", "dev"],
+      sources: [
+        { name: "mit technology review", url: "https://www.technologyreview.com/topic/artificial-intelligence/" },
+        { name: "arxiv", url: "https://arxiv.org/list/cs.AI/recent" },
+        { name: "ibm research", url: "https://research.ibm.com/topics/artificial-intelligence" }
+      ],
+      content: [
+        { type: "p", text: "Un agent IA n'est pas juste un chatbot qui parle plus longtemps. C'est un système qui reçoit un objectif, choisit des actions, utilise des outils, observe le résultat, puis ajuste son plan. La promesse est séduisante : faire rechercher, trier, résumer, comparer, coder ou tester une partie d'un travail à ta place." },
+        { type: "p", text: "Le piège, c'est de donner une mission trop large. \"Fais-moi une application\" donne souvent un résultat fragile. \"Compare ces trois bibliothèques, trouve les limites de licence, puis propose un choix avec sources\" est beaucoup plus fiable parce que la sortie est vérifiable." },
+        { type: "h2", text: "Un bon agent a des limites" },
+        { type: "p", text: "Plus l'agent a d'outils, plus il peut aider, mais plus il peut se tromper avec assurance. Les meilleurs workflows imposent des étapes courtes : chercher, citer, produire une synthèse, demander une validation, exécuter seulement si le risque est bas." },
+        { type: "list", items: ["Objectif précis en une phrase.", "Sources ou outils autorisés.", "Critère de réussite mesurable.", "Journal des actions effectuées.", "Validation humaine avant les actions coûteuses ou sensibles."] },
+        { type: "h2", text: "Où les utiliser aujourd'hui" },
+        { type: "p", text: "Les cas les plus solides sont les tâches répétitives mais inspectables : veille, extraction d'informations, préparation de tickets, analyse de logs, brouillons d'articles, tests exploratoires, classification de documents. L'agent accélère le premier passage, l'humain garde le jugement." },
+        { type: "p", text: "La vraie compétence n'est donc pas de croire l'agent. C'est de le cadrer comme un collègue très rapide, parfois brillant, parfois trop sûr de lui, et de toujours garder un système de contrôle." }
+      ]
+    },
+    {
+      slug: "gaming-indes",
+      href: "signal-article-gaming-indes.html",
+      category: "gaming",
+      title: "Pourquoi les jeux indés donnent souvent plus envie que les blockbusters",
+      deck: "Le jeu indépendant gagne parce qu'il ose des boucles courtes, des idées nettes et des directions artistiques qui se reconnaissent en une capture d'écran.",
+      date: "9 juin 2026",
+      read: "6 min",
+      author: "rédaction flux//lab",
+      trendScore: 86,
+      image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80",
+      tags: ["design", "steam", "création", "culture"],
+      sources: [
+        { name: "steam news", url: "https://store.steampowered.com/news/" },
+        { name: "itch.io", url: "https://itch.io/" },
+        { name: "game developer", url: "https://www.gamedeveloper.com/" }
+      ],
+      content: [
+        { type: "p", text: "Un blockbuster peut offrir une carte immense et des centaines d'heures de contenu, mais l'envie de jouer ne vient pas toujours du volume. Elle vient souvent d'une promesse claire : une mécanique que tu comprends vite, un style qui accroche, une tension qui te fait relancer une partie." },
+        { type: "p", text: "Les studios indépendants ont moins de budget, donc ils doivent choisir. Cette contrainte devient une force. Un jeu de deckbuilding, de survie, de puzzle ou de plateforme peut concentrer toute son énergie sur une sensation précise au lieu de cocher toutes les cases du marché." },
+        { type: "h2", text: "La lisibilité gagne" },
+        { type: "p", text: "Un bon jeu indé se pitch en quelques secondes. Tu vois l'image, tu comprends le risque, tu as envie de tester. Cette lisibilité est un avantage énorme face aux productions qui ressemblent parfois à des catalogues d'activités." },
+        { type: "list", items: ["Une boucle de jeu centrale facile à expliquer.", "Une identité visuelle reconnaissable.", "Des sessions courtes qui respectent le temps du joueur.", "Une communauté proche des créateurs.", "Des mises à jour qui répondent vite aux retours."] },
+        { type: "h2", text: "Ce que les gros jeux peuvent reprendre" },
+        { type: "p", text: "Les blockbusters n'ont pas besoin de devenir petits. Ils peuvent apprendre à mieux hiérarchiser. Moins de remplissage, plus de systèmes qui se parlent, plus de moments mémorables. La quantité impressionne, mais la cohérence donne envie de revenir." },
+        { type: "p", text: "C'est pour ça qu'un petit jeu peut occuper une soirée entière dans ta tête : il n'essaie pas d'être tout. Il essaie d'être exactement lui-même." }
+      ]
+    },
+    {
+      slug: "osint-responsable",
+      href: "signal-article-osint-responsable.html",
+      category: "osint",
+      title: "OSINT propre : enquêter sans franchir la ligne",
+      deck: "L'OSINT est puissant parce qu'il exploite des informations publiques. Cette puissance demande une méthode, une hygiène et une limite éthique très claire.",
+      date: "8 juin 2026",
+      read: "9 min",
+      author: "rédaction flux//lab",
+      trendScore: 89,
+      image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1400&q=80",
+      tags: ["enquête", "méthode", "vie privée", "web"],
+      sources: [
+        { name: "bellingcat", url: "https://www.bellingcat.com/resources/" },
+        { name: "osint framework", url: "https://osintframework.com/" },
+        { name: "cnil", url: "https://www.cnil.fr/" }
+      ],
+      content: [
+        { type: "p", text: "L'OSINT, ou renseignement d'origine ouverte, consiste à exploiter des données accessibles publiquement : pages web, archives, registres, métadonnées, réseaux sociaux, cartes, communiqués, dépôts de code. Le mot important est public. Il ne s'agit pas de contourner un accès, de harceler quelqu'un ou de voler des données." },
+        { type: "p", text: "Une bonne enquête commence par une question limitée. Plus la question est vague, plus tu risques d'accumuler des captures, des hypothèses et des biais. Note ce que tu sais, ce que tu supposes, ce que tu dois vérifier, et ce qui serait suffisant pour conclure." },
+        { type: "h2", text: "Méthode courte" },
+        { type: "list", items: ["Définir la question et le périmètre.", "Collecter les sources avec date et lien.", "Séparer faits, hypothèses et interprétations.", "Chercher une seconde source indépendante.", "Rédiger avec prudence et masquer les données personnelles inutiles."] },
+        { type: "h2", text: "Hygiène numérique" },
+        { type: "p", text: "Utilise un navigateur dédié, garde un journal de recherche, évite de te connecter à des comptes personnels pendant l'enquête, et ne contacte pas une cible sans raison légitime. Les captures doivent être nommées proprement, avec horodatage et URL, sinon elles deviennent vite inutilisables." },
+        { type: "p", text: "Le bon réflexe est simple : si une information n'aide pas la question, ne la collecte pas. Si elle expose une personne, floute-la. Si tu n'es pas sûr du contexte, écris-le clairement." }
+      ]
+    },
+    {
+      slug: "web3-securite",
+      href: "signal-article-web3-securite.html",
+      category: "web3",
+      title: "Web3 : lire avant de signer",
+      deck: "Wallets, smart contracts et dApps rendent l'utilisateur très puissant. Le revers, c'est qu'une signature mal comprise peut suffire à vider un compte.",
+      date: "7 juin 2026",
+      read: "7 min",
+      author: "rédaction flux//lab",
+      trendScore: 74,
+      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=1400&q=80",
+      tags: ["wallet", "smart contract", "risque", "crypto"],
+      sources: [
+        { name: "ethereum docs", url: "https://ethereum.org/developers/docs/" },
+        { name: "openzeppelin", url: "https://docs.openzeppelin.com/" },
+        { name: "chainalysis", url: "https://www.chainalysis.com/blog/" }
+      ],
+      content: [
+        { type: "p", text: "Dans le web classique, tu peux parfois annuler un paiement ou réinitialiser un mot de passe. Dans le Web3, certaines actions sont directes, publiques et difficiles à rattraper. C'est ce qui rend la lecture d'une transaction si importante." },
+        { type: "p", text: "Le danger ne vient pas seulement des hacks spectaculaires. Il vient souvent d'une autorisation trop large : approuver un contrat pour déplacer tous les tokens d'une collection, signer un message que tu ne comprends pas, connecter ton wallet à une dApp clonée." },
+        { type: "h2", text: "Avant de signer" },
+        { type: "list", items: ["Vérifie le domaine exact et le certificat du site.", "Lis le type d'action : transfert, approbation, signature de message.", "Utilise un wallet séparé pour tester.", "Révoque les approvals inutiles.", "Méfie-toi des urgences artificielles et des airdrops trop généreux."] },
+        { type: "h2", text: "Le réflexe lecture" },
+        { type: "p", text: "Un explorateur de blocs, la documentation du projet et les audits publics peuvent donner des indices. Ils ne garantissent pas tout, mais ils ralentissent les décisions impulsives. En sécurité, ralentir au bon moment est souvent une compétence." },
+        { type: "p", text: "La règle la plus simple reste la meilleure : ton wallet principal ne doit pas servir de terrain de test. Garde les expériences sur un compte séparé avec une somme limitée." }
+      ]
+    },
+    {
+      slug: "veille-tech",
+      href: "signal-article-veille-tech.html",
+      category: "méthode",
+      title: "Construire une veille tech qui ne noie pas",
+      deck: "Lire plus n'aide pas toujours. Une bonne veille filtre, classe, relie et transforme l'information en décisions ou en idées d'articles.",
+      date: "6 juin 2026",
+      read: "8 min",
+      author: "rédaction flux//lab",
+      trendScore: 82,
+      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80",
+      tags: ["rss", "sources", "organisation", "écriture"],
+      sources: [
+        { name: "hacker news", url: "https://news.ycombinator.com/" },
+        { name: "the verge", url: "https://www.theverge.com/tech" },
+        { name: "wired", url: "https://www.wired.com/category/security/" }
+      ],
+      content: [
+        { type: "p", text: "Une veille efficace n'est pas un robinet ouvert. C'est un système de tri. Tu veux repérer ce qui change, comprendre pourquoi ça compte, puis décider si ça mérite une lecture longue, un test, un tutoriel ou juste une note rapide." },
+        { type: "p", text: "Le piège classique consiste à suivre trop de sources avec la même priorité. Un blog de recherche, un communiqué marketing, un fil social et une vidéo YouTube ne produisent pas le même type d'information. Ils ne doivent pas arriver dans ta tête avec le même poids." },
+        { type: "h2", text: "Une structure simple" },
+        { type: "list", items: ["Sources officielles pour confirmer.", "Médias spécialisés pour comprendre l'impact.", "Forums et communautés pour sentir les usages.", "Papiers et dépôts de code pour vérifier la profondeur.", "Ton propre carnet pour relier les signaux."] },
+        { type: "h2", text: "Transformer la veille en contenu" },
+        { type: "p", text: "Chaque note devrait répondre à trois questions : qu'est-ce qui s'est passé, pourquoi c'est important, que peut faire le lecteur maintenant ? Cette forme transforme un flux bruyant en article utile." },
+        { type: "p", text: "Le site que tu es en train de bâtir doit donc montrer les sources, séparer les formats, et donner envie de passer d'une brève à une lecture longue. C'est exactement le rôle des pages articles, vidéos, tutos et tendances." }
+      ]
+    }
+  ],
+  videos: [
+    {
+      id: "9HOpanT0GRs",
+      title: "CS50 cybersécurité : bases solides pour débuter",
+      category: "cours",
+      source: "youtube / harvard cs50",
+      desc: "Une longue introduction pour comprendre risques, mots de passe, web, chiffrement et défense.",
+      tags: ["débutant", "cyber", "cours"]
+    },
+    {
+      id: "ug8W0sFiVJo",
+      title: "Hands-on cybersecurity et ethical hacking",
+      category: "atelier",
+      source: "youtube / freecodecamp",
+      desc: "Un format pratique pour suivre des démonstrations et construire des réflexes techniques.",
+      tags: ["lab", "pentest", "apprendre"]
+    },
+    {
+      id: "olgGZmkkooU",
+      title: "Définir la cybersécurité avec Computerphile",
+      category: "culture",
+      source: "youtube / computerphile",
+      desc: "Une discussion claire sur ce que recouvre réellement la cybersécurité.",
+      tags: ["culture", "défense"]
+    },
+    {
+      id: "lG7U3fuNw3A",
+      title: "XSS côté client : comprendre le piège",
+      category: "web",
+      source: "youtube / liveoverflow",
+      desc: "Une vidéo utile pour comprendre pourquoi la sanitation HTML demande de la rigueur.",
+      tags: ["xss", "web", "sécurité"]
+    },
+    {
+      id: "S6wc6yvoZLY",
+      title: "Agents IA et automatisation moderne",
+      category: "ia",
+      source: "youtube / fireship",
+      desc: "Un regard rapide sur l'économie et les usages autour des agents IA.",
+      tags: ["ia", "agents", "outils"]
+    },
+    {
+      id: "Xn-gtHDsaPY",
+      title: "Outils IA open source à surveiller",
+      category: "outils",
+      source: "youtube / fireship",
+      desc: "Une sélection de projets utiles pour enrichir sa boîte à outils.",
+      tags: ["open source", "ia"]
+    },
+    {
+      id: "DMtFhACPnTY",
+      title: "SHA et fonctions de hachage",
+      category: "crypto",
+      source: "youtube / computerphile",
+      desc: "Un classique pour comprendre ce que fait une fonction de hachage.",
+      tags: ["crypto", "hash"]
+    },
+    {
+      id: "0xah5jMflcI",
+      title: "Construire de la sécurité dans les systèmes IA",
+      category: "ia sécurité",
+      source: "youtube / freecodecamp",
+      desc: "Un cours orienté conception pour penser sécurité dès le départ.",
+      tags: ["ia", "sécurité", "cours"]
+    }
+  ],
+  tutorials: [
+    {
+      title: "Créer une veille RSS qui reste propre",
+      level: "débutant",
+      time: "25 min",
+      source: "sources : hacker news, wired, anssi, mit technology review",
+      intro: "Objectif : recevoir moins de bruit et garder seulement les signaux qui peuvent devenir des notes, articles ou tutoriels.",
+      steps: [
+        "Choisis 10 sources maximum pour commencer : 3 officielles, 3 médias, 2 communautés, 2 blogs de recherche.",
+        "Crée trois dossiers : à vérifier, à lire, à transformer.",
+        "Pour chaque lien gardé, note la date, la source et une phrase : pourquoi ce lien compte.",
+        "Une fois par semaine, supprime les sources qui n'apportent rien de concret."
+      ],
+      code: "dossiers :\n- a-verifier\n- a-lire\n- a-transformer\nnote : source + date + idee principale + action possible"
+    },
+    {
+      title: "Analyser un lien suspect sans cliquer partout",
+      level: "intermédiaire",
+      time: "20 min",
+      source: "sources : cert-fr, urlscan.io, virustotal",
+      intro: "Objectif : comprendre un lien avant de l'ouvrir directement sur ta machine principale.",
+      steps: [
+        "Copie l'URL dans un éditeur texte et vérifie le domaine réel.",
+        "Cherche les caractères trompeurs, sous-domaines longs et extensions étranges.",
+        "Utilise un service d'analyse public quand c'est adapté.",
+        "Ne télécharge pas de fichier inconnu sur ton poste principal."
+      ],
+      code: "points a noter :\n- domaine exact\n- date du domaine si disponible\n- redirections\n- fichier telecharge\n- reputation publique"
+    },
+    {
+      title: "Monter un mini-lab web local",
+      level: "débutant",
+      time: "35 min",
+      source: "sources : owasp, portswigger academy",
+      intro: "Objectif : apprendre la sécurité web dans un environnement d'entraînement, pas sur des sites réels sans autorisation.",
+      steps: [
+        "Installe un environnement local ou une plateforme d'entraînement reconnue.",
+        "Lis la fiche de la vulnérabilité avant de tester.",
+        "Note le symptôme, la cause et le correctif.",
+        "Refais l'exercice une deuxième fois sans suivre le guide."
+      ],
+      code: "fiche exercice :\n1. contexte\n2. payload de test\n3. preuve\n4. cause\n5. correction"
+    },
+    {
+      title: "Rédiger un article qui donne envie de lire",
+      level: "tous niveaux",
+      time: "30 min",
+      source: "sources : the verge, wired, game developer",
+      intro: "Objectif : transformer une actu ou une idée technique en article clair, sourcé et agréable.",
+      steps: [
+        "Commence par une promesse précise : ce que le lecteur va comprendre.",
+        "Explique le contexte avant les détails techniques.",
+        "Ajoute des exemples courts et vérifiables.",
+        "Termine par une action possible ou une question ouverte."
+      ],
+      code: "structure :\n- angle\n- contexte\n- idee forte\n- exemple\n- sources\n- conclusion utile"
+    }
+  ],
+  sources: [
+    {
+      group: "cybersécurité officielle",
+      desc: "alertes, recommandations, cadres de maturité et bonnes pratiques à utiliser pour confirmer.",
+      links: [
+        { name: "anssi", url: "https://cyber.gouv.fr/" },
+        { name: "cert-fr", url: "https://www.cert.ssi.gouv.fr/" },
+        { name: "cisa", url: "https://www.cisa.gov/" },
+        { name: "nist", url: "https://www.nist.gov/cyberframework" }
+      ]
+    },
+    {
+      group: "recherche et vulnérabilités",
+      desc: "papiers, analyses techniques et bases utiles pour comprendre la profondeur d'un sujet.",
+      links: [
+        { name: "arxiv", url: "https://arxiv.org/" },
+        { name: "google project zero", url: "https://googleprojectzero.blogspot.com/" },
+        { name: "owasp", url: "https://owasp.org/" },
+        { name: "portswigger academy", url: "https://portswigger.net/web-security" }
+      ]
+    },
+    {
+      group: "médias tech",
+      desc: "actualité, analyse, culture numérique et signaux faibles.",
+      links: [
+        { name: "wired", url: "https://www.wired.com/" },
+        { name: "the verge", url: "https://www.theverge.com/" },
+        { name: "mit technology review", url: "https://www.technologyreview.com/" },
+        { name: "ars technica", url: "https://arstechnica.com/" }
+      ]
+    },
+    {
+      group: "gaming et création",
+      desc: "sorties, tendances de design, industrie et communautés de créateurs.",
+      links: [
+        { name: "steam news", url: "https://store.steampowered.com/news/" },
+        { name: "itch.io", url: "https://itch.io/" },
+        { name: "game developer", url: "https://www.gamedeveloper.com/" },
+        { name: "nintendo life", url: "https://www.nintendolife.com/" }
+      ]
+    },
+    {
+      group: "vidéos et cours",
+      desc: "formats longs, vulgarisation et ateliers à regarder directement depuis le site quand l'intégration est autorisée.",
+      links: [
+        { name: "harvard cs50", url: "https://www.youtube.com/@cs50" },
+        { name: "freecodecamp", url: "https://www.youtube.com/@freecodecamp" },
+        { name: "computerphile", url: "https://www.youtube.com/@Computerphile" },
+        { name: "liveoverflow", url: "https://www.youtube.com/@LiveOverflow" }
+      ]
+    },
+    {
+      group: "communautés et signaux faibles",
+      desc: "à lire avec recul : utile pour sentir ce qui monte, pas pour confirmer seul une information.",
+      links: [
+        { name: "hacker news", url: "https://news.ycombinator.com/" },
+        { name: "github trending", url: "https://github.com/trending" },
+        { name: "lobsters", url: "https://lobste.rs/" },
+        { name: "reddit technology", url: "https://www.reddit.com/r/technology/" }
+      ]
+    }
+  ],
+  trends: [
+    { topic: "agents ia utiles", category: "ia", score: 94, source: "mit technology review / arxiv / youtube", why: "Les outils deviennent plus pratiques quand ils exécutent des tâches courtes, vérifiables et reliées à des workflows réels." },
+    { topic: "zero trust concret", category: "cyber", score: 91, source: "nist / cisa / anssi", why: "Les équipes cherchent des méthodes applicables : identité forte, segmentation, moindre privilège et journaux lisibles." },
+    { topic: "sécurité web moderne", category: "cyber", score: 87, source: "owasp / portswigger academy / liveoverflow", why: "XSS, supply chain front-end et permissions navigateur restent des sujets très formatifs." },
+    { topic: "jeux indés malins", category: "gaming", score: 84, source: "steam news / itch.io / game developer", why: "Les petites équipes captent l'attention avec des mécaniques nettes et des identités visuelles fortes." },
+    { topic: "osint responsable", category: "méthode", score: 82, source: "bellingcat / cnil / osint framework", why: "Les méthodes d'enquête doivent être utiles sans exposer inutilement des personnes." },
+    { topic: "outils ia open source", category: "outils", score: 79, source: "github trending / fireship / arxiv", why: "Les lecteurs veulent tester des outils sans dépendre d'une seule plateforme." },
+    { topic: "wallet hygiene", category: "web3", score: 72, source: "ethereum docs / openzeppelin / chainalysis", why: "La sécurité des signatures et des approvals reste un point faible pour beaucoup d'utilisateurs." }
+  ]
+};
+
+</script><script>
+/* JavaScript intégré : fonctionnement du blog */
+(function () {
+  const data = window.SignalData;
+  if (!data) return;
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+  function esc(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function thumb(videoId) {
+    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  }
+
+  function embed(videoId, autoplay) {
+    const auto = autoplay ? "&autoplay=1" : "";
+    return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1${auto}`;
+  }
+
+  function sourcePills(sources, limit = 3) {
+    return sources.slice(0, limit).map((source) => (
+      `<a class="source-pill" href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.name)}</a>`
+    )).join("");
+  }
+
+  function tagList(tags) {
+    return tags.map((tag) => `<span class="tag">${esc(tag)}</span>`).join("");
+  }
+
+  function articleCard(article) {
+    return `
+      <a class="article-card" href="${esc(article.href)}">
+        <img src="${esc(article.image)}" alt="${esc(article.title)}" loading="lazy">
+        <div class="card-body">
+          <div class="card-cat">${esc(article.category)}</div>
+          <h3>${esc(article.title)}</h3>
+          <p>${esc(article.deck)}</p>
+          <div class="card-meta">
+            <span>${esc(article.date)}</span>
+            <span>${esc(article.read)}</span>
+          </div>
+          <div class="source-row">${sourcePills(article.sources, 2)}</div>
+          <div class="tag-list">${tagList(article.tags.slice(0, 3))}</div>
+        </div>
+      </a>
+    `;
+  }
+
+  function getVotes() {
+    try {
+      return JSON.parse(localStorage.getItem("signalTrendVotes") || "{}");
+    } catch {
+      return {};
+    }
+  }
+
+  function setVotes(votes) {
+    localStorage.setItem("signalTrendVotes", JSON.stringify(votes));
+  }
+
+  function rankedTrends() {
+    const votes = getVotes();
+    return data.trends
+      .map((trend) => ({
+        ...trend,
+        votes: votes[trend.topic] || 0,
+        total: trend.score + (votes[trend.topic] || 0) * 6
+      }))
+      .sort((a, b) => b.total - a.total);
+  }
+
+  function renderTrendMini() {
+    const box = $("[data-trend-mini]");
+    if (!box) return;
+    box.innerHTML = rankedTrends().slice(0, 4).map((trend, index) => `
+      <a class="trend-mini" href="signal-tendances.html">
+        <span class="trend-rank">${index + 1}</span>
+        <span>
+          <strong>${esc(trend.topic)}</strong>
+          <small class="mini-source">source : ${esc(trend.source)}</small>
+        </span>
+        <strong>${trend.total}</strong>
+      </a>
+    `).join("");
+  }
+
+  function renderTrendBoard() {
+    const board = $("[data-trend-board]");
+    if (!board) return;
+    board.innerHTML = rankedTrends().map((trend, index) => {
+      const width = Math.min(100, Math.max(14, trend.total));
+      return `
+        <article class="trend-box">
+          <div class="trend-score">${index + 1}</div>
+          <div>
+            <div class="card-cat">${esc(trend.category)}</div>
+            <h3>${esc(trend.topic)}</h3>
+            <p>${esc(trend.why)}</p>
+            <small class="source-name">source : ${esc(trend.source)}</small>
+            <div class="trend-bar"><span style="width:${width}%"></span></div>
+          </div>
+          <button class="vote-btn" type="button" data-vote="${esc(trend.topic)}">+ tendance</button>
+        </article>
+      `;
+    }).join("");
+
+    $$("[data-vote]", board).forEach((button) => {
+      button.addEventListener("click", () => {
+        const votes = getVotes();
+        const topic = button.dataset.vote;
+        votes[topic] = (votes[topic] || 0) + 1;
+        setVotes(votes);
+        renderTrendBoard();
+        renderTrendMini();
+      });
+    });
+  }
+
+  function renderFeatured() {
+    const feature = $("[data-featured]");
+    const stack = $("[data-home-stack]");
+    if (!feature) return;
+
+    const [main, ...rest] = data.articles;
+    feature.innerHTML = `
+      <a class="feature-story" href="${esc(main.href)}">
+        <img src="${esc(main.image)}" alt="${esc(main.title)}" loading="lazy">
+        <div class="feature-content">
+          <span class="eyebrow">${esc(main.category)}</span>
+          <h2>${esc(main.title)}</h2>
+          <p>${esc(main.deck)}</p>
+          <div class="hero-actions">
+            <span class="btn">lire l'article</span>
+            <span class="btn secondary">source : ${esc(main.sources[0].name)}</span>
+          </div>
+        </div>
+      </a>
+    `;
+
+    if (stack) {
+      stack.innerHTML = rest.slice(0, 4).map((article) => `
+        <a class="stack-item" href="${esc(article.href)}">
+          <img src="${esc(article.image)}" alt="${esc(article.title)}" loading="lazy">
+          <span>
+            <strong>${esc(article.title)}</strong>
+            <small>${esc(article.category)} · ${esc(article.read)}</small>
+          </span>
+        </a>
+      `).join("");
+    }
+  }
+
+  function renderHomeArticles() {
+    const grid = $("[data-home-articles]");
+    if (!grid) return;
+    grid.innerHTML = data.articles.slice(0, 6).map(articleCard).join("");
+  }
+
+  function renderArticlesPage() {
+    const grid = $("[data-articles-grid]");
+    if (!grid) return;
+
+    const search = $("[data-article-search]");
+    const filter = $("[data-article-filter]");
+    const categories = ["tout", ...new Set(data.articles.map((article) => article.category))];
+
+    if (filter && !filter.dataset.ready) {
+      filter.innerHTML = categories.map((cat) => `<option value="${esc(cat)}">${esc(cat)}</option>`).join("");
+      filter.dataset.ready = "true";
+    }
+
+    function update() {
+      const q = (search?.value || "").trim().toLowerCase();
+      const cat = filter?.value || "tout";
+      const articles = data.articles.filter((article) => {
+        const text = `${article.title} ${article.deck} ${article.category} ${article.tags.join(" ")}`.toLowerCase();
+        return (!q || text.includes(q)) && (cat === "tout" || article.category === cat);
+      });
+
+      grid.innerHTML = articles.length
+        ? articles.map(articleCard).join("")
+        : `<div class="empty-state">aucun article ne correspond à cette recherche.</div>`;
+    }
+
+    search?.addEventListener("input", update);
+    filter?.addEventListener("change", update);
+    update();
+  }
+
+  function renderArticlePage() {
+    const slug = document.body.dataset.article;
+    const host = $("[data-article-page]");
+    if (!slug || !host) return;
+
+    const article = data.articles.find((item) => item.slug === slug);
+    if (!article) {
+      host.innerHTML = `<div class="empty-state">article introuvable.</div>`;
+      return;
+    }
+
+    document.title = `${article.title} - ${data.site.name}`;
+    const hero = $("[data-article-hero]");
+    if (hero) hero.style.setProperty("--article-image", `url("${article.image}")`);
+
+    $("[data-article-category]") && ($("[data-article-category]").textContent = article.category);
+    $("[data-article-title]") && ($("[data-article-title]").textContent = article.title);
+    $("[data-article-deck]") && ($("[data-article-deck]").textContent = article.deck);
+    $("[data-article-meta]") && ($("[data-article-meta]").innerHTML = `
+      <span>${esc(article.date)}</span>
+      <span>${esc(article.read)}</span>
+      <span>${esc(article.author)}</span>
+    `);
+
+    host.innerHTML = article.content.map((block) => {
+      if (block.type === "h2") return `<h2>${esc(block.text)}</h2>`;
+      if (block.type === "list") return `<ul>${block.items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>`;
+      return `<p>${esc(block.text)}</p>`;
+    }).join("");
+
+    const sourceBox = $("[data-article-sources]");
+    if (sourceBox) {
+      sourceBox.innerHTML = article.sources.map((source) => (
+        `<a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.name)}</a>`
+      )).join("");
+    }
+
+    const tagBox = $("[data-article-tags]");
+    if (tagBox) tagBox.innerHTML = tagList(article.tags);
+
+    const related = $("[data-related-articles]");
+    if (related) {
+      const relatedArticles = data.articles.filter((item) => item.slug !== slug).slice(0, 3);
+      related.innerHTML = relatedArticles.map((item) => `
+        <a class="stack-item" href="${esc(item.href)}">
+          <img src="${esc(item.image)}" alt="${esc(item.title)}" loading="lazy">
+          <span><strong>${esc(item.title)}</strong><small>${esc(item.category)} · ${esc(item.read)}</small></span>
+        </a>
+      `).join("");
+    }
+
+    initBookmark(article.slug);
+    initReadingProgress();
+  }
+
+  function initBookmark(slug) {
+    const button = $("[data-bookmark]");
+    if (!button) return;
+    const key = `signalBookmark:${slug}`;
+    function refresh() {
+      button.textContent = localStorage.getItem(key) ? "favori enregistré" : "ajouter aux favoris";
+    }
+    button.addEventListener("click", () => {
+      if (localStorage.getItem(key)) {
+        localStorage.removeItem(key);
+      } else {
+        localStorage.setItem(key, "1");
+      }
+      refresh();
+    });
+    refresh();
+  }
+
+  function initReadingProgress() {
+    const bar = $("[data-reading-progress]");
+    if (!bar) return;
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      bar.style.width = `${pct}%`;
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  function renderVideoTheater() {
+    const host = $("[data-video-theater]");
+    if (!host) return;
+    const first = data.videos[0];
+    const limit = Number(host.dataset.limit || data.videos.length);
+    host.innerHTML = `
+      <div>
+        <div class="video-frame">
+          <iframe data-main-video src="${embed(first.id, false)}" title="${esc(first.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <div class="card-cat" data-video-cat>${esc(first.category)}</div>
+          <h3 data-video-title>${esc(first.title)}</h3>
+          <p data-video-desc>${esc(first.desc)}</p>
+          <div class="video-meta"><span class="video-source">source : ${esc(first.source)}</span></div>
+        </div>
+      </div>
+      <div class="playlist">
+        ${data.videos.slice(0, limit).map((video, index) => `
+          <button type="button" class="${index === 0 ? "active" : ""}" data-video-id="${esc(video.id)}">
+            <img src="${thumb(video.id)}" alt="${esc(video.title)}" loading="lazy">
+            <span>
+              <strong>${esc(video.title)}</strong>
+              <small class="video-source">source : ${esc(video.source)}</small>
+            </span>
+          </button>
+        `).join("")}
+      </div>
+    `;
+
+    $$("[data-video-id]", host).forEach((button) => {
+      button.addEventListener("click", () => {
+        const video = data.videos.find((item) => item.id === button.dataset.videoId);
+        if (!video) return;
+        $$("[data-video-id]", host).forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        $("[data-main-video]", host).src = embed(video.id, true);
+        $("[data-main-video]", host).title = video.title;
+        $("[data-video-cat]", host).textContent = video.category;
+        $("[data-video-title]", host).textContent = video.title;
+        $("[data-video-desc]", host).textContent = video.desc;
+        $(".video-meta", host).innerHTML = `<span class="video-source">source : ${esc(video.source)}</span>`;
+      });
+    });
+  }
+
+  function renderVideoGrid() {
+    const grid = $("[data-video-grid]");
+    if (!grid) return;
+    grid.innerHTML = data.videos.map((video) => `
+      <article class="article-card">
+        <img src="${thumb(video.id)}" alt="${esc(video.title)}" loading="lazy">
+        <div class="card-body">
+          <div class="card-cat">${esc(video.category)}</div>
+          <h3>${esc(video.title)}</h3>
+          <p>${esc(video.desc)}</p>
+          <div class="tag-list">${tagList(video.tags)}</div>
+          <a class="source-pill" href="https://www.youtube.com/watch?v=${esc(video.id)}" target="_blank" rel="noreferrer">source : ${esc(video.source)}</a>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  function renderTutorials() {
+    const grid = $("[data-tutorials]");
+    if (!grid) return;
+    grid.innerHTML = data.tutorials.map((tutorial) => `
+      <article class="tutorial">
+        <div class="card-cat">${esc(tutorial.level)} · ${esc(tutorial.time)}</div>
+        <h3>${esc(tutorial.title)}</h3>
+        <p>${esc(tutorial.intro)}</p>
+        <div class="tutorial-steps">
+          ${tutorial.steps.map((step) => `<div class="tutorial-step"><span>${esc(step)}</span></div>`).join("")}
+        </div>
+        <pre class="code-box"><code>${esc(tutorial.code)}</code></pre>
+        <small class="source-name">${esc(tutorial.source)}</small>
+      </article>
+    `).join("");
+  }
+
+  function renderHomeTutos() {
+    const grid = $("[data-home-tutos]");
+    if (!grid) return;
+    grid.innerHTML = data.tutorials.slice(0, 3).map((tutorial) => `
+      <article class="tutorial">
+        <div class="card-cat">${esc(tutorial.level)} · ${esc(tutorial.time)}</div>
+        <h3>${esc(tutorial.title)}</h3>
+        <p>${esc(tutorial.intro)}</p>
+        <small class="source-name">${esc(tutorial.source)}</small>
+      </article>
+    `).join("");
+  }
+
+  function renderSources() {
+    const grid = $("[data-sources]");
+    if (!grid) return;
+    grid.innerHTML = data.sources.map((group) => `
+      <article class="source-block">
+        <h3>${esc(group.group)}</h3>
+        <p>${esc(group.desc)}</p>
+        <div>
+          ${group.links.map((link) => `<a class="source-name" href="${esc(link.url)}" target="_blank" rel="noreferrer">${esc(link.name)}</a>`).join("")}
+        </div>
+      </article>
+    `).join("");
+  }
+
+  function initQuiz() {
+    const host = $("[data-quiz]");
+    if (!host) return;
+    const questions = [
+      { q: "Dans une logique zero trust, on vérifie surtout...", o: ["chaque demande selon son contexte", "uniquement le réseau interne", "la couleur du logo"], a: 0 },
+      { q: "Une source officielle sert d'abord à...", o: ["confirmer une information", "remplacer toute analyse", "faire joli en bas de page"], a: 0 },
+      { q: "Pour un agent IA, la meilleure mission est souvent...", o: ["courte et vérifiable", "floue et infinie", "sans garde-fou"], a: 0 },
+      { q: "En OSINT responsable, il faut...", o: ["limiter la collecte utile", "tout publier sans filtre", "ignorer le contexte"], a: 0 }
+    ];
+    let index = 0;
+    let score = 0;
+
+    function draw() {
+      const item = questions[index];
+      host.innerHTML = `
+        <p><strong>question ${index + 1}/${questions.length}</strong></p>
+        <h3>${esc(item.q)}</h3>
+        <div class="quiz-options">
+          ${item.o.map((option, optionIndex) => `<button type="button" data-answer="${optionIndex}">${esc(option)}</button>`).join("")}
+        </div>
+        <p>score : <strong>${score}</strong></p>
+      `;
+      $$("[data-answer]", host).forEach((button) => {
+        button.addEventListener("click", () => {
+          const good = Number(button.dataset.answer) === item.a;
+          button.classList.add(good ? "good" : "bad");
+          if (good) score += 1;
+          setTimeout(() => {
+            index += 1;
+            if (index >= questions.length) {
+              host.innerHTML = `
+                <h3>résultat : ${score}/${questions.length}</h3>
+                <p>${score >= 3 ? "Solide. Tu peux passer aux articles longs." : "Pas grave, les tutos sont là pour chauffer le moteur."}</p>
+                <button class="game-action" type="button" data-restart-quiz>rejouer</button>
+              `;
+              $("[data-restart-quiz]", host).addEventListener("click", () => {
+                index = 0;
+                score = 0;
+                draw();
+              });
+            } else {
+              draw();
+            }
+          }, 520);
+        });
+      });
+    }
+    draw();
+  }
+
+  function initMemory() {
+    const host = $("[data-memory]");
+    if (!host) return;
+    const values = ["iam", "xss", "rss", "ctf", "llm", "hash"];
+    let cards = [];
+    let opened = [];
+    let matched = 0;
+
+    function shuffle() {
+      cards = [...values, ...values]
+        .map((value, index) => ({ value, id: `${value}-${index}`, open: false, matched: false }))
+        .sort(() => Math.random() - 0.5);
+      opened = [];
+      matched = 0;
+    }
+
+    function draw() {
+      host.innerHTML = `
+        <div class="memory-grid">
+          ${cards.map((card, index) => `
+            <button class="memory-card ${card.matched ? "matched" : ""}" type="button" data-card="${index}">
+              ${card.open || card.matched ? esc(card.value) : "?"}
+            </button>
+          `).join("")}
+        </div>
+        <p>paires trouvées : <strong>${matched}/${values.length}</strong></p>
+        <button class="game-action" type="button" data-memory-reset>mélanger</button>
+      `;
+      $$("[data-card]", host).forEach((button) => {
+        button.addEventListener("click", () => {
+          const card = cards[Number(button.dataset.card)];
+          if (card.open || card.matched || opened.length >= 2) return;
+          card.open = true;
+          opened.push(card);
+          draw();
+          if (opened.length === 2) {
+            setTimeout(() => {
+              if (opened[0].value === opened[1].value) {
+                opened[0].matched = true;
+                opened[1].matched = true;
+                matched += 1;
+              }
+              opened.forEach((item) => { item.open = false; });
+              opened = [];
+              draw();
+            }, 650);
+          }
+        });
+      });
+      $("[data-memory-reset]", host).addEventListener("click", () => {
+        shuffle();
+        draw();
+      });
+    }
+
+    shuffle();
+    draw();
+  }
+
+  function initReflex() {
+    const host = $("[data-reflex]");
+    if (!host) return;
+    let timer = null;
+    let started = 0;
+    let ready = false;
+    const bestKey = "signalReflexBest";
+
+    host.innerHTML = `
+      <div class="reflex-zone">
+        <button class="game-action" type="button" data-reflex-start>démarrer</button>
+        <button class="reflex-pad" type="button" data-reflex-pad>attends le vert, puis clique</button>
+        <p data-reflex-result>meilleur temps : ${localStorage.getItem(bestKey) || "--"} ms</p>
+      </div>
+    `;
+
+    const pad = $("[data-reflex-pad]", host);
+    const result = $("[data-reflex-result]", host);
+    $("[data-reflex-start]", host).addEventListener("click", () => {
+      clearTimeout(timer);
+      ready = false;
+      pad.classList.remove("ready");
+      pad.textContent = "patience...";
+      timer = setTimeout(() => {
+        ready = true;
+        started = performance.now();
+        pad.classList.add("ready");
+        pad.textContent = "clique maintenant";
+      }, 900 + Math.random() * 2200);
+    });
+
+    pad.addEventListener("click", () => {
+      if (!ready) {
+        clearTimeout(timer);
+        pad.textContent = "trop tôt. relance.";
+        pad.classList.remove("ready");
+        return;
+      }
+      const ms = Math.round(performance.now() - started);
+      const best = Number(localStorage.getItem(bestKey) || Infinity);
+      if (ms < best) localStorage.setItem(bestKey, String(ms));
+      result.textContent = `temps : ${ms} ms · meilleur : ${localStorage.getItem(bestKey)} ms`;
+      ready = false;
+      pad.classList.remove("ready");
+      pad.textContent = "démarre une nouvelle manche";
+    });
+  }
+
+  function initHeadlineLab() {
+    const host = $("[data-headline-lab]");
+    if (!host) return;
+    const starts = ["Ce que personne ne t'explique sur", "Le guide clair pour comprendre", "Pourquoi tout le monde reparle de", "Le vrai problème derrière"];
+    const subjects = ["les agents IA", "le zero trust", "les jeux indés", "l'OSINT responsable", "la sécurité Web3", "les sources fiables"];
+    const angles = ["sans jargon", "avec des exemples", "en 10 minutes", "avant de te faire piéger", "pour écrire un meilleur article"];
+
+    function pick(list) {
+      return list[Math.floor(Math.random() * list.length)];
+    }
+
+    function draw() {
+      host.innerHTML = `
+        <h3>${esc(`${pick(starts)} ${pick(subjects)} ${pick(angles)}`)}</h3>
+        <p>mini-jeu rédaction : génère un titre, puis essaie d'écrire l'intro en 4 lignes.</p>
+        <button class="game-action" type="button" data-new-headline>nouveau titre</button>
+      `;
+      $("[data-new-headline]", host).addEventListener("click", draw);
+    }
+    draw();
+  }
+
+  function initGames() {
+    initQuiz();
+    initMemory();
+    initReflex();
+    initHeadlineLab();
+  }
+
+  function initNav() {
+    const toggle = $("[data-nav-toggle]");
+    const links = $("[data-nav-links]");
+    toggle?.addEventListener("click", () => links?.classList.toggle("open"));
+    const page = document.body.dataset.page;
+    $$("[data-nav]").forEach((link) => {
+      link.classList.toggle("active", link.dataset.nav === page);
+    });
+    $$("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
+    $$("[data-updated]").forEach((el) => { el.textContent = data.site.updated; });
+  }
+
+  function init() {
+    initNav();
+    renderTrendMini();
+    renderTrendBoard();
+    renderFeatured();
+    renderHomeArticles();
+    renderArticlesPage();
+    renderArticlePage();
+    renderVideoTheater();
+    renderVideoGrid();
+    renderTutorials();
+    renderHomeTutos();
+    renderSources();
+    initGames();
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
+
+</script>
+</body>
+</html>
